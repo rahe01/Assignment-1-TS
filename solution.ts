@@ -86,3 +86,30 @@ const printBookDetails = (book: Book): void => {
         `Title: ${book.title}, Author: ${book.author}, Published: ${book.publishedYear}, Available: ${availablity}`
     );
 };
+
+
+type Product = {
+    name: string;
+    price: number;
+    quantity: number;
+    discount?: number; 
+};
+
+const calculateTotalPrice = (products: Product[]): number => {
+    if (products.length === 0) return 0;
+
+    return products
+        .map(product => {
+            
+            let total = product.price * product.quantity;
+
+            
+            if (product.discount !== undefined) {
+                total = total - (total * (product.discount / 100));
+            }
+
+            return total;
+        })
+        .reduce((sum, value) => sum + value, 0); 
+};
+
