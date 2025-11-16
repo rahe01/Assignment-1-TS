@@ -52,4 +52,33 @@ const user: Person = {
 console.log(user);
 
 
+TypeScript-এ keyof কীওয়ার্ডের ব্যবহার
+
+keyof হলো TypeScript-এর একটি শক্তিশালী কীওয়ার্ড যা কোনো অবজেক্ট টাইপের সব প্রপার্টির নামকে ইউনিয়ন টাইপ হিসেবে বের করে। এটি সাধারণত টাইপ নিরাপদ ফাংশন, জেনেরিক্স এবং অবজেক্ট প্রপার্টি অ্যাক্সেসের জন্য ব্যবহার করা হয়।
+
+সুবিধা:
+
+অবজেক্টের প্রপার্টি নামগুলোকে টাইপ হিসেবে ব্যবহার করতে দেয়।
+
+প্রপার্টি নাম ভুল টাইপ দিলে কম্পাইল টাইমেই এরর দেখায়।
+
+জেনেরিক্সের সঙ্গে ব্যবহার করলে কোড অনেক বেশি টাইপ-সেফ হয়।
+type Car = {
+  brand: string;
+  year: number;
+  isElectric: boolean;
+};
+
+type CarKeys = keyof Car;
+
+const key: CarKeys = "year";
+
+function getCarProperty(car: Car, key: CarKeys) {
+  return car[key];
+}
+
+const myCar: Car = { brand: "Tesla", year: 2023, isElectric: true };
+console.log(getCarProperty(myCar, "brand"));
+console.log(getCarProperty(myCar, "isElectric"));
+
 
