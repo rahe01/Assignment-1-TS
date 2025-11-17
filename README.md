@@ -1,4 +1,4 @@
-ypeScript-এ Interface এবং Type-এর পার্থক্য
+TypeScript-এ Interface এবং Type-এর পার্থক্য
 
 TypeScript-এ interface এবং type—দুটিই অবজেক্ট বা ক্লাসের স্ট্রাকচার নির্ধারণ করতে ব্যবহার করা হয়। তবে এদের মধ্যে কিছু গুরুত্বপূর্ণ পার্থক্য রয়েছে।
 
